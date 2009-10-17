@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+            <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+            <title>rMPD</title>
+            <!--<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>-->
+            <link rel="stylesheet" type="text/css" href="display.css"/>
+    </head>
+
+    <body>
+        <h1>MPD Web</h1>
+        <h2>Directory listing for <%= ($dir == '') ? 'Root' : $dir + '/' %></h2>
+        <ul>
+        <% unless $dir == '' %>
+            <li>
+                <a href="browse.rb?<%= $dir.parent.url_encode %>">..</a>
+            </li>
+        <% end %>
+
+        <% $listing.each do |dir| %>
+            <li>
+                <a href="browse.rb?<%= dir.url_encode %>">
+                    <%= dir.html_encode.split('/')[-1] %>
+                </a>
+            </li>
+        <% end %>
+        </ul>
+
+        <h2>File Listing</h2>
+        <ul>
+            <% $files.each do |f| %>
+            <li title="<%= f['file'].html_encode %>">
+                <%= f['title'].html_encode %>
+                <a href="plAdd.rb?<%=f['file'].url_encode%>">
+                    <img src="img/add.png" alt="Add to playlist"
+                    width="16" height="16" />
+                </a>
+            </li>
+            <% end %>
+        </ul>
+
+        <h2>Directory Tools</h2>
+        TODO: Directory tools!
+
+        <div style="margin-top: 3em;">
+            <a href="index.rb">Go home</a>
+        </div>
+    </body>
+</html>

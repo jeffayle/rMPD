@@ -1,0 +1,40 @@
+* {margin:0; padding: 0;}
+body {
+    margin-left: 5%;
+    width: 90%;
+}
+
+/* Links */
+a, a:link, a:visited, a:active, a:hover {
+    color: blue;
+    text-decoration: none;
+} a:hover {
+    text-decoration: underline;
+}
+
+/* Control */
+#control {
+    margin-left: 20%;
+}
+
+/* Playlist view */
+#playlist tr th {
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+#playlist tr td:nth-child(1) {
+    width: 10%;
+    text-align: right;
+    padding-right: 1em;
+}
+#playlist tr td:nth-child(2) { width: 25%; }
+#playlist tr td:nth-child(3) { width: 25%; }
+#playlist tr td:nth-child(4) { width: 25%; }
+#playlist tr td:nth-child(5) { width: 10%; }
+#playlist tr[class=nowplaying] {
+    background-color: #faa;
+}
+#playlist td {
+    height: 1em;
+    overflow: hidden;
+}

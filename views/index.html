@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>rMPD</title>
+        <!--<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>-->
+        <link rel="stylesheet" type="text/css" href="display.css"/>
+    </head>
+
+    <body>
+        <h1>MPD Web</h1>
+        
+        <!-- Control -->
+        <div id="control">
+            <h2>Control</h2>
+            <!-- Previous Button -->
+            <% if $current.to_i > 0 %>
+            <a href="previous.rb">
+                <img src="img/control_start_blue.png" alt="Previous"
+                width="16" height="16" />
+            </a>
+            <% else %>
+                <img src="img/control_start.png" alt="Previous"
+                width="16" height="16" />
+            <% end %>
+            <!-- Play/Pause Button -->
+            <a href="pause.rb">
+            <% if $playing %>
+                <img src="img/control_pause_blue.png" alt="Pause"
+                width="16" height="16" />
+            <% else %>
+                <img src="img/control_play_blue.png" alt="Play"
+                width="16" height="16" />
+            <% end %>
+            </a>
+            <!-- Stop Button -->
+            <% if $stopped %>
+               <img src="img/control_stop.png" alt="Stopped"
+               width="16" height="16" />
+            <% else %>
+                <a href="stop.rb">
+                    <img src="img/control_stop_blue.png" alt="Stop"
+                    width="16" height="16" />
+                </a>
+            <% end %>
+            <!-- Next Button -->
+            <% if $current.to_i < ($playlist.length - 1) %>
+            <a href="next.rb">
+                <img src="img/control_end_blue.png" alt="Next"
+                width="16" height="16" />
+            </a>
+            <% else %>
+                <img src="img/control_end.png" alt="Next"
+                width="16" height="16" />
+            </a>
+            <% end %>
+            <!-- Loop Button -->
+            <a href="toggleLoop.rb">
+            <% if $repeat %>
+                <img src="img/control_repeat_blue.png" alt="Loop on"
+                width="16" height="16" />
+            <% else %>
+                <img src="img/control_repeat.png" alt="Loop off"
+                width="16" height="16" />
+            <% end %>
+            </a>
+        </div>
+        
+        <!-- Play list viewer -->
+        <div id="playlist">
+            <h2>Playlist</h2>
+            <table>
+                <tr>
+                    <th><!--Track number--></th>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Album</th>
+                    <th><!--remove icon--></th>
+                </tr>
+                
+                <% $playlist.each do |s| %>
+                <tr<%= (s['pos'] == $current) ? ' class="nowplaying"' : ''  %>
+                    <td><%= s['track'] %></td>
+                    <td><a href="play.rb?<%= s['pos'] %>">
+                        <%= s['title'] %>
+                    </a></td>
+                    <td><%= s['artist'] %></td>
+                    <td><%= s['album'] %></td>
+                    <td>
+                        <a href="remove.rb?<%= s['pos'] %>">
+                            <img src="img/delete.png" alt="Remove"
+                            width="16" height="16" />
+                        </a>
+                    </td>
+                </tr>
+                <% end %>
+            </table>
+            <a href="browse.rb?/">Browse Music</a>
+        </div>
+        
+        <div id="tools">
+            <h2>Tools</h2>
+            <ul>
+                <li><a href="tools.rb?shuffle">Shuffle Playlist</a></li>
+                <li><a href="tools.rb?ralbum">Play Random Album</a></li>
+            </ul>
+        </div>
+    </body>
+</html>
