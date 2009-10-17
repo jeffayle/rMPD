@@ -40,7 +40,15 @@
         </ul>
 
         <h2>Directory Tools</h2>
-        TODO: Directory tools!
+        <ul>
+            <% $tools.each do |tool| %>
+            <li>
+                <a href="DirectoryTools/<%= tool.url_encode %>?<%= $dir %>">
+                    <%= tool.split('.')[0].sub('_',' ').html_encode %>
+                </a>
+            </li>
+            <% end %>
+        </ul>
 
         <div style="margin-top: 3em;">
             <a href="index.rb">Go home</a>
