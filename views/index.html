@@ -101,8 +101,14 @@
         <div id="tools">
             <h2>Tools</h2>
             <ul>
-                <li><a href="tools.rb?shuffle">Shuffle Playlist</a></li>
-                <li><a href="tools.rb?ralbum">Play Random Album</a></li>
+            <% $tools.each do |tool| %>
+            <li>
+                <a href="Tools/<%=tool%>">
+                    <%= tool.split('.')[0].sub(/_/,' ') %>
+                    <!-- TODO: Make it replace all underscores -->
+                </a>
+            </li>
+            <% end %>
             </ul>
         </div>
     </body>

@@ -15,5 +15,8 @@ $repeat = $mpd.repeat?
 #Get current playlist
 $playlist = $mpd.playlist
 
+#Get tools
+$tools =  Dir.entries('Tools/').select{|d| d[0,1] != '.'}
+
 out = ERB.new(File.read('views/index.html'))
 print out.result
