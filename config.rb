@@ -6,6 +6,9 @@ $config[:host] = 'localhost'
 #Port
 $config[:port] = 6600
 
+#Where your music library is, needed for streaming (do not add trailing /)
+$config[:mdir] = '/exthd/jeff/music'
+
 #Connection stuff
 require 'rubygems'
 require 'librmpd'
