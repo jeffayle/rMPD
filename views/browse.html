@@ -31,8 +31,12 @@
             <% $files.each do |f| %>
             <li title="<%= f['file'].html_encode %>">
                 <%= f['title'].html_encode %>
-                <a href="plAdd.rb?<%=f['file'].url_encode%>">
+                <a href="plAdd.rb?<%=f['file'].url_encode.html_encode%>">
                     <img src="img/add.png" alt="Add to playlist"
+                    width="16" height="16" />
+                </a>
+                <a href="stream.rb?<%=f['file'].url_encode.html_encode%>">
+                    <img src="img/music.png" alt="Stream audio"
                     width="16" height="16" />
                 </a>
             </li>
