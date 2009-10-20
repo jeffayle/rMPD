@@ -9,6 +9,10 @@ $config[:port] = 6600
 #Where your music library is, needed for streaming (do not add trailing /)
 $config[:mdir] = '/exthd/jeff/Music'
 
+#Where the root of the client can be found over HTTP. (do not add trailing /)
+#Make sure that any computer that will be using it can access it on this url.
+$config[:httpAddr] = 'http://192.168.1.134/~mpdr'
+
 #Connection stuff
 require 'rubygems'
 require 'librmpd'
