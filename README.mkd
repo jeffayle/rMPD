@@ -1,0 +1,41 @@
+# rMPD #
+rMPD is a webclient for the Music Player Daemon written entirely in Ruby.
+It is based on [http://github.com/jeffayle/librmpd2](librmpd2), and uses
+[http://www.famfamfam.com/lab/icons/silk/](Famfamfam's Silk Icon Set).
+
+## Licese ##
+The bulk of the program is licensed under the
+[https://secure.wikimedia.org/wikipedia/en/wiki/ISC_license](ISC License) 
+with the exception of librmpd2 and the icons.
+
+See COPYING for more information.
+
+## Installation ##
+To install, you must have a working ruby installation and a webserver with CGI
+running. For the HTTP streaming feature to work, the CGI script must have read
+access to your music library.
+
+Make sure your webserver is configured to run .rb files as CGI scripts, then
+edit config.rb. The first section is the actual configuration, then the actual
+connection, this will be seperated into a different file in the future, you do
+not need to edit that.
+
+## Usage ##
+Once installed, point your browser to wherever the scripts are accessible from,
+this main view should display your playlist and a few extra buttons. The
+control section will allow you to control the player-- skip, pause, stop, et
+cetera.
+
+The browser music link will show you all the folders in the root directory
+of your music library. You can browser the subdirectories and songs in there.
+Each song has a link to add it to the playlist and to stream it.
+
+## Tools ##
+At the bottom of the page of the main page (playlist view) and the bottom of
+the directory view is a Tools section. Tools are simply scripts in the Tools/
+and DirectoryTools/ directories, except that the extension is not displayed
+and underscores are displayed as spaces.
+
+To write your own tool, simply create a new CGI script in one of those
+directories. Tools are given no extra information, but directory tools are
+given the directory to work on in the query string.
