@@ -14,7 +14,6 @@ $config[:mdir] = '/exthd/jeff/Music'
 $config[:httpAddr] = 'http://192.168.1.134/~mpdr'
 
 #Connection stuff
-require 'rubygems'
 require 'librmpd'
 $mpd = MPD.new $config[:host], $config[:port]
 $mpd.connect
