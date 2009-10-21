@@ -12,5 +12,11 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+Exceptions to the above:
+
  ** librmpd.rb is licensed under GPL2
 http://github.com/jeffayle/librmpd2
+
+ ** The really nice icons are from the Famfamfam Silk Icon Set, licensed under
+Creative Commons Attribution 2.5 License.
+http://www.famfamfam.com/lab/icons/silk/
