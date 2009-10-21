@@ -14,7 +14,11 @@ $config[:mdir] = '/exthd/jeff/Music'
 $config[:httpAddr] = 'http://192.168.1.134/~mpdr'
 
 #Connection stuff
-require 'librmpd'
+begin
+    require 'librmpd'
+rescue LoadError
+    require '../librmpd'
+end
 $mpd = MPD.new $config[:host], $config[:port]
 $mpd.connect
 
