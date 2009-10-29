@@ -71,27 +71,29 @@
             <h2>Playlist</h2>
             <table>
                 <tr>
-                    <th><!--Track number--></th>
-                    <th>Title</th>
-                    <th>Artist</th>
-                    <th>Album</th>
-                    <th><!--remove icon--></th>
+                <% $config[:plHeaders].each do |title| %>
+                    <th><%= title %></th>
+                <% end %>
                 </tr>
                 
                 <% $playlist.each do |s| %>
                 <tr<%= (s['pos'] == $current) ? ' class="nowplaying"' : ''  %>
-                    <td><%= s['track'] %></td>
+                    <% $config[:plContent].each do |col| %>
+                    <% if col == 'title' %>
                     <td><a href="play.rb?<%= s['pos'] %>">
                         <%= s['title'] %>
                     </a></td>
-                    <td><%= s['artist'] %></td>
-                    <td><%= s['album'] %></td>
+                    <% elsif col == 'tools' %>
                     <td>
                         <a href="remove.rb?<%= s['pos'] %>">
                             <img src="img/delete.png" alt="Remove"
                             width="16" height="16" />
                         </a>
                     </td>
+                    <% else %>
+                    <td><%= s[col] %></td>
+                    <% end %>
+                    <% end %>
                 </tr>
                 <% end %>
             </table>
