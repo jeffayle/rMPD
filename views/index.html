@@ -106,7 +106,7 @@
             <% $tools.each do |tool| %>
             <li>
                 <a href="Tools/<%=tool%>">
-                    <%= tool.split('.')[0].sub(/_/,' ') %>
+                    <%= tool.split('.')[0].gsub(/_/,' ') %>
                     <!-- TODO: Make it replace all underscores -->
                 </a>
             </li>

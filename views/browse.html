@@ -48,7 +48,7 @@
             <% $tools.each do |tool| %>
             <li>
                 <a href="DirectoryTools/<%= tool.url_encode %>?<%= $dir %>">
-                    <%= tool.split('.')[0].sub('_',' ').html_encode %>
+                    <%= tool.split('.')[0].gsub('_',' ').html_encode %>
                 </a>
             </li>
             <% end %>
