@@ -10,7 +10,7 @@
     <body>
         <h1>MPD Web</h1>
         <h2>Directory listing for <%= ($dir == '') ? 'Root' : $dir + '/' %></h2>
-        <ul>
+        <ul class="directories">
         <% unless $dir == '' %>
             <li>
                 <a href="browse.rb?<%= $dir.parent.url_encode %>">..</a>
