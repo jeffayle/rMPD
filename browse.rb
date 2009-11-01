@@ -7,7 +7,7 @@ ENV['REQUEST_URI'] =~ /\?(.+)$/
 $dir = ($1 || '').url_decode
 
 #Directories
-$listing = $mpd.directories $dir, false
+$listing = $mpd.directories($dir, false).sort_nocase
 #Attach .parent method
 def $dir.parent()
     p = self.dup
