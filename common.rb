@@ -26,3 +26,12 @@ class String
         CGI::escapeHTML self
     end
 end
+
+#Case insensitive sorting
+class Array
+    def sort_nocase
+        self.sort do |a, b|
+            a.upcase <=> b.upcase
+        end
+    end
+end
