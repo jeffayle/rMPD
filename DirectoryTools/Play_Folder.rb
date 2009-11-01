@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 #Plays all songs in specified folder
-require '../config'
+require '../common'
 
 ENV['REQUEST_URI'] =~ /\?(.*)$/
 dir = $1.url_decode

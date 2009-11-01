@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 #Gives the user an M3U playlist with remote URLs for streaming
-require '../config'
+require '../common'
 
 ENV['REQUEST_URI'] =~ /\?(.*)$/
 dir = $1.url_decode

@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-require 'config'
+require 'common'
 
 ENV['REQUEST_URI'] =~ /\?(\d+)$/
 item = $1.to_i

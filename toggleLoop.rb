@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 #Toggles loop
-require 'config'
+require 'common'
 
 $mpd.repeat = ($mpd.repeat? ? false : true)
 

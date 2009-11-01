@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 #Stops currently playing song
-require 'config'
+require 'common'
 
 $mpd.stop
 

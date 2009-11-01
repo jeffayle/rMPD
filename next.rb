@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 #Goes to previous track
-require 'config'
+require 'common'
 
 $mpd.next
 

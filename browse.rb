@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 #Browse directories and music files
-require 'config'
+require 'common'
 require 'erb'
 
 ENV['REQUEST_URI'] =~ /\?(.+)$/

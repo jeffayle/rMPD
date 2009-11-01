@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 #Gives access to music library files over HTTP
-require 'config'
+require 'common'
 
 ENV['REQUEST_URI'] =~ /\?(.*)$/
 f = $config[:mdir] + '/' + $1.url_decode

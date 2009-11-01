@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 #Updates the library starting at the current path
-require '../config'
+require '../common'
 
 ENV['REQUEST_URI'] =~ /\?(.*)$/
 dir = $1.url_decode

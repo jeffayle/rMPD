@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 #Tool to shuffle current playlist
-require '../config'
+require '../common'
 
 $mpd.shuffle
 

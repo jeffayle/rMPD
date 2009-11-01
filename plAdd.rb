@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 #Adds specified song to the playlist
-require 'config'
+require 'common'
 
 ENV['REQUEST_URI'] =~ /\?(.+)$/
 file = $1.url_decode

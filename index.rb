@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 require 'rubygems'
-require 'config'
+require 'common'
 require 'erb'
 
 print "Content-Type: text/html\r\n"

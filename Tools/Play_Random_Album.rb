@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 #Clears the current playlist, then plays a random album
-require '../config'
+require '../common'
 
 all = $mpd.albums
 album = all[(rand*all.length).floor]

@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 #Pauses/Plays current song
 #Starts playlist if stopped
-require 'config'
+require 'common'
 
 if $mpd.stopped?
     $mpd.play 0
