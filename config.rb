@@ -32,28 +32,3 @@ $config[:plHeaders] = [
 $config[:plContent] = [
     'track', 'title', 'artist', 'album', 'tools'
 ]
-
-#Connection stuff
-begin
-    require 'librmpd'
-rescue LoadError
-    require '../librmpd'
-end
-$mpd = MPD.new $config[:host], $config[:port]
-$mpd.connect
-
-#Extra functionality
-require 'cgi'
-class String
-    def url_encode()
-        CGI::escape self
-    end
-    
-    def url_decode()
-        CGI::unescape self
-    end
-
-    def html_encode()
-        CGI::escapeHTML self
-    end
-end
