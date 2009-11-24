@@ -17,7 +17,7 @@ unless nexts
     end
 end
 
-album = all.delete(0)
+album = nexts.delete(0)
 songs = $mpd.find 'album', album
 
 #Writes out new list of albums
