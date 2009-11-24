@@ -13,11 +13,11 @@ unless nexts
     nexts = Array.new
     25.times do
        n = rand(all.length)
-       nexts << all.delete(n)
+       nexts << all.delete_at(n)
     end
 end
 
-album = nexts.delete(0)
+album = nexts.delete_at(0)
 songs = $mpd.find 'album', album
 
 #Writes out new list of upcoming albums
