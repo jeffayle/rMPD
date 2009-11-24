@@ -1,0 +1,4 @@
+State Directory
+---------------
+The state directory is used for keeping the state of tools.
+It must be readable and writable by the server
