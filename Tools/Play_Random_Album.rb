@@ -20,13 +20,13 @@ end
 album = nexts.delete(0)
 songs = $mpd.find 'album', album
 
-#Writes out new list of albums
+#Writes out new list of upcoming albums
 f = File.open '../State/Play_Random_Album', 'w'
 f.write(nexts.join("\n"))
 f.flush
 f.close
 
-#Clears the playlist, then queues those songs
+#Clears the playlist, then queues those new songs
 $mpd.clear
 songs.each do |s|
     $mpd.add s['file']
