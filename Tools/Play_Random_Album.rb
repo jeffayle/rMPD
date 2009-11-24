@@ -22,7 +22,7 @@ songs = $mpd.find 'album', album
 
 #Writes out new list of upcoming albums
 f = File.open '../State/Play_Random_Album', 'w'
-f.write(nexts.join("\n"))
+f.puts nexts
 f.flush
 f.close
 
