@@ -12,7 +12,7 @@ unless nexts
     all = $mpd.albums
     nexts = Array.new
     25.times do
-       n = (rand * all.length).floor
+       n = rand(all.length)
        nexts << all.delete(n)
     end
 end
