@@ -3,7 +3,7 @@ rMPD is a webclient for the Music Player Daemon written entirely in Ruby.
 It is based on [http://github.com/jeffayle/librmpd2](librmpd2), and uses
 [http://www.famfamfam.com/lab/icons/silk/](Famfamfam's Silk Icon Set).
 
-## Licese ##
+## License ##
 The bulk of the program is licensed under the
 [https://secure.wikimedia.org/wikipedia/en/wiki/ISC_license](ISC License) 
 with the exception of librmpd2 and the icons.
