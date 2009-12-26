@@ -32,7 +32,10 @@ $config[:plHeaders] = [
 $config[:plContent] = [
     'track', 'title', 'artist', 'album', 'tools'
 ]
-
 #Similarly for browsing files, same options as for playlist
 $config[:fbHeaders] = ['Title', 'Artist', 'Year', '']
 $config[:fbContent] = ['title', 'artist', 'date', 'tools']
+
+#Volume control
+#How much each tick on volume control will increment the volume
+$config[:volumeInc] = 10
