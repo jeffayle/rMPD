@@ -16,6 +16,13 @@ $playlist = $mpd.playlist
 
 #Get length of playlist
 $total_length = $playlist.inject(0){|m,c| m+c['time'].to_i }
+#Figure out how much of that is left
+if $stopped
+    $remaining_length = 0
+else
+    $remaining_length = $playlist[0...$current].inject(0){ |m, c|
+        m + c['time'].to_i } + $mpd.time[0]
+end
 
 #Get tools
 $tools =  Dir.entries('Tools/').select{|d| d[0,1] != '.'}.sort_nocase

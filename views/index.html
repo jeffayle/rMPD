@@ -94,7 +94,6 @@
                 </tr>
                 
                 <% $playlist.each do |s| %>
-                <tr<%= (s['pos'] == $current) ? ' class="nowplaying"' : ''  %>>
                 <tr<%= 
                 (s['pos'].to_i == $current) ? ' class="nowplaying"' : ''  %>>
                     <% $config[:plContent].each do |col| %>
@@ -117,7 +116,9 @@
                 <% end %>
             </table>
             <div>
-                Total Length: <%= $total_length.to_s_dtime %>
+                <strong><%= $remaining_length.to_s_dtime %></strong>
+                of
+                <strong><%= $total_length.to_s_dtime %></strong>
             </div>
             <a href="browse.rb?">Browse Music</a>
         </div>
