@@ -42,3 +42,23 @@ a, a:link, a:visited, a:active, a:hover {
 td {
     padding: 0 .25em;
 }
+
+.progressBarOuter {
+    border: 1px solid black;
+    height: 1em;
+    position: relative;
+}
+.progressBarInner {
+    background-color: #999;
+    height: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.progressBarOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1em;
+    overflow: hidden;
+}

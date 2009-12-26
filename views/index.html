@@ -115,10 +115,16 @@
                 </tr>
                 <% end %>
             </table>
-            <div>
-                <strong><%= $remaining_length.to_s_dtime %></strong>
-                of
-                <strong><%= $total_length.to_s_dtime %></strong>
+            <div class="progressBarOuter">
+                <div class="progressBarInner"
+                        style="width: <%= $pbPlayingWidth %>%;">
+                </div>
+
+                <div class="progressBarOverlay">
+                    <strong><%= $remaining_length.to_s_dtime %></strong>
+                    of
+                    <strong><%= $total_length.to_s_dtime %></strong>
+                </div>
             </div>
             <a href="browse.rb?">Browse Music</a>
         </div>
