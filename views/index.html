@@ -65,6 +65,23 @@
             <% end %>
             </a>
         </div>
+        <!-- Volume Control -->
+        <div>
+        <h2>Volume</h2>
+        <% v = 0
+        while (v <= 100) %>
+            <a href="setVolume.rb?<%= v %>">
+            <% if $mpd.volume < v %>
+                <img src="img/volumeOff.png" width="24" height="12"
+                alt="<%= v %>%" />
+            <% else %>
+                <img src="img/volumeOn.png" width="24" height="12"
+                alt="<%= v %>%" />
+            <% end %>
+            </a>
+        <% v += $config[:volumeInc]
+        end %>
+        </div>
         
         <!-- Play list viewer -->
         <div id="playlist">
