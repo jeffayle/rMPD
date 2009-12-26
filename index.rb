@@ -1,5 +1,4 @@
 #!/usr/bin/ruby
-require 'rubygems'
 require 'common'
 require 'erb'
 
