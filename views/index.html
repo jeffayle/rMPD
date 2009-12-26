@@ -68,7 +68,7 @@
         <!-- Volume Control -->
         <div>
         <h2>Volume</h2>
-        <% v = 0
+        <% v = $config[:volumeInc] 
         while (v <= 100) %>
             <a href="setVolume.rb?<%= v %>">
             <% if $mpd.volume < v %>
