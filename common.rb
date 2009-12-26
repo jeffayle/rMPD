@@ -27,6 +27,13 @@ class String
     end
 end
 
+class Integer
+    #Format as a relative in time as a string
+    def to_s_dtime()
+        return self.to_s ##DUMMY
+    end
+end
+
 #Case insensitive sorting
 class Array
     def sort_nocase

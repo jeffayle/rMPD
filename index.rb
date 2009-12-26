@@ -14,6 +14,9 @@ $repeat = $mpd.repeat?
 #Get current playlist
 $playlist = $mpd.playlist
 
+#Get length of playlist
+$total_length = $playlist.inject(0){|m,c| m+c['time'].to_i }
+
 #Get tools
 $tools =  Dir.entries('Tools/').select{|d| d[0,1] != '.'}.sort_nocase
 
