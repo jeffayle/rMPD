@@ -7,6 +7,7 @@
 # Author:: Andrew Rader (bitwise_mcgee AT yahoo.com | http://nymb.us)
 # Copyright:: Copyright (c) 2006 Andrew Rader
 # License:: Distributed under the GNU GPL v2 (See COPYING file)
+# Updates since 2009 by Jeffrey Aylesworth <jeffrey@aylesworth.ca>
 #
 # This was written with MPD version 0.11.5 (http://www.musicpd.org)
 #
@@ -19,6 +20,8 @@
 # as specified in the MPD Server Protocol, however some have been modified
 # or renamed. Most notable is the list* and lsinfo functions have been
 # replace with more sane methods (such as `files` for all files)
+#
+# http://github.com/jeffayle/librmpd2
 #
 #== Usage
 #
@@ -1052,6 +1055,14 @@ class MPD
         end
 
         return ret
+    end
+
+    #
+    # Gets the time into and total time of the currently play song
+    # as an array of [time into, total time]
+    def time()
+        t = self.status['time'].split ':'
+        [t[0].to_i, t[1].to_i]
     end
 
     #
