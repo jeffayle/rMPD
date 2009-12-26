@@ -30,7 +30,31 @@ end
 class Integer
     #Format as a relative in time as a string
     def to_s_dtime()
-        return self.to_s ##DUMMY
+        rem = self #Remainder (unprocessed)
+        days = rem/86_400 #86'400 seconds in a day
+            rem %= 86_400
+        hours = rem/3600
+            rem %= 3600
+        minutes = rem/60
+            rem %= 60
+        seconds = rem
+
+        days_s = days.quantify 'day','s'
+        hours_s = hours.quantify 'hour','s'
+        minutes_s = hours.quantify 'minute','s'
+        seconds_s = seconds.quantify 'second','s'
+
+        [days_s,hours_s,minutes_s,seconds_s].join ' '
+    end
+
+    def quantify(unit, plural)
+        if self == 0
+            ''
+        elsif self == 1
+            "1 #{unit}"
+        else
+            "#{self} #{unit}#{plural}"
+        end
     end
 end
 
