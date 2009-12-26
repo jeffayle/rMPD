@@ -60,7 +60,8 @@
         <ul>
             <% $tools.each do |tool| %>
             <li>
-                <a href="DirectoryTools/<%= tool.url_encode %>?<%= $dir %>">
+                <a href="DirectoryTools/<%= tool.url_encode %>?<%=
+                        $dir.url_encode %>">
                     <%= tool.split('.')[0].gsub('_',' ').html_encode %>
                 </a>
             </li>
