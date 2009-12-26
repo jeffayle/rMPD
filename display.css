@@ -49,7 +49,7 @@ td {
     position: relative;
 }
 .progressBarInner {
-    background-color: #999;
+    background-color: #faa;
     height: 1em;
     position: absolute;
     top: 0;
