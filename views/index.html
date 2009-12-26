@@ -95,6 +95,8 @@
                 
                 <% $playlist.each do |s| %>
                 <tr<%= (s['pos'] == $current) ? ' class="nowplaying"' : ''  %>>
+                <tr<%= 
+                (s['pos'].to_i == $current) ? ' class="nowplaying"' : ''  %>>
                     <% $config[:plContent].each do |col| %>
                     <% if col == 'title' %>
                     <td><a href="play.rb?<%= s['pos'] %>">
