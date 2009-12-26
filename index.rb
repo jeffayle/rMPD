@@ -9,7 +9,7 @@ print "\r\n" #End of header
 #Current playing status, for buttons
 $playing = $mpd.playing?
 $stopped = $mpd.stopped?
-$current = ($mpd.current_song || {'pos'=>-1})['pos']
+$current = $stopped ? -1 : $mpd.current_song['pos']
 $repeat = $mpd.repeat?
 
 #Get current playlist
