@@ -15,7 +15,7 @@ $repeat = $mpd.repeat?
 $playlist = $mpd.playlist
 
 #Get tools
-$tools =  Dir.entries('Tools/').select{|d| d[0,1] != '.'}
+$tools =  Dir.entries('Tools/').select{|d| d[0,1] != '.'}.sort_nocase
 
 out = ERB.new(File.read('views/index.html'))
 print out.result

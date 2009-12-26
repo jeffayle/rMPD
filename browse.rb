@@ -22,7 +22,7 @@ end
 $files = $mpd.songs $dir, false
 
 #Tools
-$tools = Dir.entries('DirectoryTools/').select{|d| d[0,1] != '.'}
+$tools = Dir.entries('DirectoryTools/').select{|d| d[0,1] != '.'}.sort_nocase
 
 print "Content-Type: text/html\r\n"
 print "\r\n"
