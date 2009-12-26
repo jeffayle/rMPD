@@ -32,3 +32,7 @@ $config[:plHeaders] = [
 $config[:plContent] = [
     'track', 'title', 'artist', 'album', 'tools'
 ]
+
+#Similarly for browsing files, same options as for playlist
+$config[:fbHeadders] = ['Title', 'Artist', 'Year', '']
+$config[:fbContent] = ['title', 'artist', 'date', 'tools']
