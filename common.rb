@@ -41,7 +41,7 @@ class Integer
 
         days_s = days.quantify 'day','s'
         hours_s = hours.quantify 'hour','s'
-        minutes_s = hours.quantify 'minute','s'
+        minutes_s = minutes.quantify 'minute','s'
         seconds_s = seconds.quantify 'second','s'
 
         [days_s,hours_s,minutes_s,seconds_s].join ' '
