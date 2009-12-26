@@ -5,7 +5,7 @@ It is based on [http://github.com/jeffayle/librmpd2](librmpd2), and uses
 
 ## License ##
 The bulk of the program is licensed under the
-[https://secure.wikimedia.org/wikipedia/en/wiki/ISC_license](ISC License) 
+[ISC License](https://secure.wikimedia.org/wikipedia/en/wiki/ISC_license)
 with the exception of librmpd2 and the icons.
 
 See COPYING for more information.
