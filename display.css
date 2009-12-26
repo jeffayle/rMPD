@@ -38,3 +38,7 @@ a, a:link, a:visited, a:active, a:hover {
     height: 1em;
     overflow: hidden;
 }
+
+td {
+    padding: 0 .25em;
+}
