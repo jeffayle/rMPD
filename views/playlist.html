@@ -15,6 +15,25 @@
         <% end %>
         </ol>
 
+        <h2>Manage Playlists</h2>
+        <form action="managePlaylist.rb" method="post">
+            <select name="pl">
+            <% $playlists.each do |pl| %>
+                <option value="<%= pl %>"><%= pl %></option>
+            <% end %>
+            </select>
+            <ul>
+                <!-- Delete -->
+                <li><input type="submit" value="Delete" name="action" /></li>
+                <!-- Rename -->
+                <li><input type="text" name="newname" />
+                <input type="submit" value="Rename" name="action" /></li>
+                <!-- Save/play -->
+                <li><input type="submit" value="Play" name="action" />
+                <input type="submit" value="Save" name="action" /></li>
+            </ul>
+        </form>
+
         <div style="margin-top: 3em;">
             <a href="index.rb">Go home</a>
         </div>
