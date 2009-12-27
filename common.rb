@@ -44,7 +44,13 @@ class Integer
         minutes_s = minutes.quantify 'minute','s'
         seconds_s = seconds.quantify 'second','s'
 
-        [days_s,hours_s,minutes_s,seconds_s].join ' '
+        times = [days_s, hours_s, minutes_s, seconds_s]
+
+        if times.all?{|n| n==0 }
+            '0'
+        else
+            times.join(' ').gsub(/ +/,' ')
+        end
     end
 
     def quantify(unit, plural)
