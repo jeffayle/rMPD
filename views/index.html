@@ -115,6 +115,19 @@
                 </tr>
                 <% end %>
             </table>
+            <!-- Current song progress -->
+            <div class="progressBarOuter">
+                <div class="progressBarInner"
+                        style="width: <%= $pbSongWidth %>%;">
+                </div>
+                <div class="progressBarOverlay">
+                    <strong><%= $time[0].to_s_dtime %></strong>
+                    of
+                    <strong><%= $time[1].to_s_dtime %></strong>
+                    in song
+                </div>
+            </div>
+            <!-- Current playlist progress -->
             <div class="progressBarOuter">
                 <div class="progressBarInner"
                         style="width: <%= $pbPlayingWidth %>%;">
@@ -124,8 +137,10 @@
                     <strong><%= $remaining_length.to_s_dtime %></strong>
                     of
                     <strong><%= $total_length.to_s_dtime %></strong>
+                    in playlist
                 </div>
             </div>
+
             <a href="browse.rb?">Browse Music</a>
         </div>
         

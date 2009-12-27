@@ -28,6 +28,10 @@ end
 #Figure out how wide the playlist progress bar should be.
 $pbPlayingWidth = 100.0 * $remaining_length / $total_length
 
+#Figure out how much is left in current song
+$time = $mpd.time
+$pbSongWidth = 100.0 * $time[0] / $time[1]
+
 #Get tools
 $tools =  Dir.entries('Tools/').select{|d| d[0,1] != '.'}.sort_nocase
 
