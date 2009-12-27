@@ -9,11 +9,9 @@ print "\r\n"
 params = url_params ENV['REQUEST_URI']
 $term = (params['search'] or '')
 $type = params['type']
-p $term
 
 $type = 'title ' unless ['title','artist','album','filename'].include? $type
 $searching = ($term != '')
-p $searching
 
 if $searching
     $results = $mpd.search $type, $term
