@@ -72,3 +72,16 @@ class Array
         end
     end
 end
+
+#Process parameters in a URL
+def url_params(url)
+    params = Hash.new
+    url =~ /\?(.+)$/
+    query_string = $1 or return params
+    query_string.split('&').each do |p|
+        name, value = p.split '=', 2
+        params[name.url_decode] = value.url_decode
+    end
+
+    params
+end
