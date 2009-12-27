@@ -33,6 +33,27 @@
                 <th><%= title %></th>
             <% end %>
             </tr>
+            <!--~~~~~~~~~~~~-->
+            <% $results.each do |f| %>
+            <tr>
+            <% $config[:fbContent].each do |col| %>
+                <td>
+                <% if col == 'tools' %>
+                    <a href="plAdd.rb?<%=f['file'].url_encode.html_encode%>">
+                        <img src="img/add.png" alt="Add to playlist"
+                        width="16" height="16" />
+                    </a>
+                    <a href="stream.rb?<%=f['file'].url_encode.html_encode%>">
+                        <img src="img/music.png" alt="Stream audio"
+                        width="16" height="16" />
+                    </a> 
+                <% else %>
+                    <%= f[col] %>
+                <% end %>
+                </td>
+            <% end %>
+            </tr>
+            <% end %>
         </table>
         <% end %>
     </body>
