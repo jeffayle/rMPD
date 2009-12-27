@@ -11,6 +11,7 @@
         <h1>MPD Web</h1>
         <h2>Search</h2>
 
+        <!-- Search Form -->
         <form action="search.rb" method="get">
             <input type="text" name="search" value="<%= $term %>" />
             <select name="type">
@@ -24,6 +25,15 @@
             <input type="submit" value="Search" />
         </form>
 
-        <pre><%= $searching ? $results.inspect : '(results)' %></pre>
+        <!-- Display results -->
+        <% if $searching %>
+        <table>
+            <tr>
+            <% $config[:fbHeaders].each do |title| %>
+                <th><%= title %></th>
+            <% end %>
+            </tr>
+        </table>
+        <% end %>
     </body>
 </html>
