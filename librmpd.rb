@@ -1061,8 +1061,13 @@ class MPD
     # Gets the time into and total time of the currently play song
     # as an array of [time into, total time]
     def time()
-        t = self.status['time'].split ':'
-        [t[0].to_i, t[1].to_i]
+        t = self.status['time']
+        if t
+            [t[0].to_i, t[1].to_i]
+        else
+            [0, 1] #When not playing anything.
+                    #Second index is not zero to avoid /0
+        end
     end
 
     #
