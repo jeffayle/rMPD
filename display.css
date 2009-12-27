@@ -45,12 +45,12 @@ td {
 
 .progressBarOuter {
     border: 1px solid black;
-    height: 1em;
+    height: 1.1em;
     position: relative;
 }
 .progressBarInner {
     background-color: #faa;
-    height: 1em;
+    height: 1.1em;
     position: absolute;
     top: 0;
     left: 0;
