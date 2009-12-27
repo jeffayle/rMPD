@@ -16,7 +16,7 @@
         </ol>
 
         <h2>Manage Playlists</h2>
-        <form action="managePlaylist.rb" method="post">
+        <form action="managePlaylist.rb" method="get">
             <select name="pl">
             <% $playlists.each do |pl| %>
                 <option value="<%= pl %>"><%= pl %></option>
