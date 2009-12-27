@@ -9,6 +9,9 @@ dir = file.sub(/\/[^\/]+$/, '').url_encode
 
 $mpd.add file
 
-print "Location: browse.rb?#{dir}\r\n"
+#Go back to previous page
+back = ENV['HTTP_REFERER']
+
+print "Location: #{back}\r\n"
 print "\r\n"
 
