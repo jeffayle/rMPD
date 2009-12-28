@@ -8,7 +8,7 @@ action = params['action']
 newname = params['newname'] #Only used when renaming a playlist (action=Rename)
 
 #Make sure that the action is actually one of the available actions
-action = 'Play' unless ['Delete','Rename','Save','Play'].include? action
+action = 'Play' unless ['Delete','Rename','Save','Play','New'].include? action
 
 #Do that action
 if action == 'Play'
@@ -19,6 +19,8 @@ elsif action == 'Save'
     $mpd.remove_playlist playlist
     #Cannot overwrite an existing playlist, so must first delete old version
     $mpd.save playlist
+elsif action == 'New'
+    $mpd.save newname
 else
     #For debugging...
     print "Content-Type: text/plain\r\n"
