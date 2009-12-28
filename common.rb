@@ -89,10 +89,10 @@ end
 #Tool icons/links for file at position pos on the playlist
 def playlist_item_tool(pos, playlist)
     moveUp = (if pos.to_i == 0
-        %{<img src="img/spacer.png" width="16" height="16" />}
+        %{<img src="img/spacer.png" width="16" height="16" alt="" />}
     else
         %{<a href="moveUp.rb?#{pos}"><img src="img/arrow_up.png"
-        width="16" height="16" /></a>}
+        width="16" height="16" alt="move up" /></a>}
     end)
 <<EOF
     <a href="remove.rb?#{pos}">
