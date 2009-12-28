@@ -87,10 +87,17 @@ def url_params(url)
 end
 
 #Tool icons/links for file at position pos on the playlist
-def playlist_item_tool(pos)
+def playlist_item_tool(pos, playlist)
+    moveUp = (if pos.to_i == 0
+        %{<img src="img/spacer.png" width="16" height="16" />}
+    else
+        %{<a href="moveUp.rb?#{pos}"><img src="img/arrow_up.png"
+        width="16" height="16" /></a>}
+    end)
 <<EOF
     <a href="remove.rb?#{pos}">
         <img src="img/delete.png" alt="Remove" width="16" height="16" />
     </a>
+    #{moveUp}
 EOF
 end

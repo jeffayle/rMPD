@@ -102,7 +102,7 @@
                         <%= s['title'] %>
                     </a></td>
                     <% elsif col == 'tools' %>
-                        <td><%= playlist_item_tool s['pos'] %></td>
+                        <td><%= playlist_item_tool s['pos'], $playlist %></td>
                     <% else %>
                     <td><%= s[col] %></td>
                     <% end %>
