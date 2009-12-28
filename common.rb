@@ -94,10 +94,18 @@ def playlist_item_tool(pos, playlist)
         %{<a href="moveUp.rb?#{pos}"><img src="img/arrow_up.png"
         width="16" height="16" alt="move up" /></a>}
     end)
+
+    moveDown = (if pos.to_i == playlist.length-1
+        %{<img src="img/spacer.png" width="16" height="16" alt="" />}
+    else
+        %{<a hre"moveDown.rb?#{pos}"><img src="img/arrow_down.png"
+        width="16" height="16" alt="Move Down" /></a>}
+    end)
 <<EOF
     <a href="remove.rb?#{pos}">
         <img src="img/delete.png" alt="Remove" width="16" height="16" />
     </a>
     #{moveUp}
+    #{moveDown}
 EOF
 end
