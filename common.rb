@@ -109,3 +109,15 @@ def playlist_item_tool(pos, playlist)
     #{moveDown}
 EOF
 end
+
+#Tool icons/links for search results & browsing
+def file_tools(filename)
+<<EOF
+    <a href="plAdd.rb?#{filename.url_encode.html_encode}">
+        <img src="img/add.png" alt="Add to playlist" width="16" height="16" />
+    </a>
+    <a href="stream.rb?#{filename.url_encode.html_encode}">
+        <img src="img/music.png" alt="Stream audio" width="16" height="16" />
+    </a>
+EOF
+end
