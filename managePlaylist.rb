@@ -8,7 +8,7 @@ action = params['action']
 newname = params['newname'] #Only used when renaming a playlist (action=Rename)
 
 #Make sure that the action is actually one of the available actions
-action = 'Play' unless ['Delete','Rename','Save','Play','New'].include? action
+action = 'Play' unless ['Delete','Save','Play','New'].include? action
 
 #Do that action
 if action == 'Play'
