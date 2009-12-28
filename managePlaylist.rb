@@ -21,6 +21,8 @@ elsif action == 'Save'
     $mpd.save playlist
 elsif action == 'New'
     $mpd.save newname
+elsif action == 'Delete'
+    $mpd.remove_playlist playlist
 else
     #For debugging...
     print "Content-Type: text/plain\r\n"
