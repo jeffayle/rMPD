@@ -102,12 +102,7 @@
                         <%= s['title'] %>
                     </a></td>
                     <% elsif col == 'tools' %>
-                    <td>
-                        <a href="remove.rb?<%= s['pos'] %>">
-                            <img src="img/delete.png" alt="Remove"
-                            width="16" height="16" />
-                        </a>
-                    </td>
+                        <td><%= playlist_item_tool s['pos'] %></td>
                     <% else %>
                     <td><%= s[col] %></td>
                     <% end %>

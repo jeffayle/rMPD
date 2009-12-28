@@ -85,3 +85,12 @@ def url_params(url)
 
     params
 end
+
+#Tool icons/links for file at position pos on the playlist
+def playlist_item_tool(pos)
+<<EOF
+    <a href="remove.rb?#{pos}">
+        <img src="img/delete.png" alt="Remove" width="16" height="16" />
+    </a>
+EOF
+end
