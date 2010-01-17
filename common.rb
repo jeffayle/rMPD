@@ -7,6 +7,7 @@ rescue LoadError
     require '../librmpd'
     require '../config'
 end
+require 'pathname'
 
 $mpd = MPD.new $config[:host], $config[:port]
 $mpd.connect
@@ -143,9 +144,12 @@ def album_art_bydir(directory)
     listing = Dir.glob($config[:mdir] + '/' + directory + '/*')
     listing.map!{|f| [f, File.basename(f)]}
     listing.each do |f|
-        return f[0] if $config[:albumArtFiles].include? f[1].downcase
+        if  $config[:albumArtFiles].include? f[1].downcase
+            mdir = Pathname.new $config[:mdir]
+            cover = Pathname.new f[0]
+            return cover.relative_path_from(mdir).to_s
+        end
     end
-
     #Recurse into parent directories
     if directory == ''
         nil
