@@ -16,9 +16,7 @@ running. For the HTTP streaming feature to work, the CGI script must have read
 access to your music library.
 
 Make sure your webserver is configured to run .rb files as CGI scripts, then
-edit config.rb. The first section is the actual configuration, then the actual
-connection, this will be seperated into a different file in the future, you do
-not need to edit that.
+edit config.rb. 
 
 ## Usage ##
 Once installed, point your browser to wherever the scripts are accessible from,
