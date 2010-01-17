@@ -132,9 +132,8 @@ def dir_parent(directory)
     end
 end
 
-#Gets the name of the album art for a song by id
-def album_art(sid)
-    song = $mpd.song_with_id sid
+#Gets the name of the album art for a song by filenmae
+def album_art(song)
     directory = dir_parent song
     
     album_art_bydir directory
