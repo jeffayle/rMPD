@@ -121,3 +121,13 @@ def file_tools(filename)
     </a>
 EOF
 end
+
+#Returns the parent of a directory
+def dir_parent(directory)
+    p = directory.dup
+    if p =~ /\//
+        p.sub /\/[^\/]+$/, ''
+    else
+        ''
+    end
+end

@@ -10,12 +10,7 @@ $dir = ($1 || '').url_decode
 $listing = $mpd.directories($dir, false).sort_nocase
 #Attach .parent method
 def $dir.parent()
-    p = self.dup
-    if p =~ /\//
-        p.sub /\/[^\/]+$/, ''
-    else
-        ''
-    end
+    dir_parent(self)
 end
 
 #Files listing
