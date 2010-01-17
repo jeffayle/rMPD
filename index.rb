@@ -36,7 +36,7 @@ $pbSongWidth = 100.0 * $time[0] / $time[1]
 $tools =  Dir.entries('Tools/').select{|d| d[0,1] != '.'}.sort_nocase
 
 #Album art
-$hasAlbumArt = if $stopped
+$hasAlbumArt = if $stopped or not $config[:albumArtOn]
     nil
 else
     album_art $playlist[$current]['file']
