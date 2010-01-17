@@ -46,6 +46,7 @@ a img {
     position: absolute;
     top: .25em;
     right: .25em;
+    z-index: -1;
 }
 
 td {
