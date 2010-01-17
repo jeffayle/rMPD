@@ -24,8 +24,8 @@ this main view should display your playlist and a few extra buttons. The
 control section will allow you to control the player-- skip, pause, stop, et
 cetera.
 
-The browser music link will show you all the folders in the root directory
-of your music library. You can browser the subdirectories and songs in there.
+The browse music link will show you all the folders in the root directory
+of your music library. You can browse the subdirectories and songs in there.
 Each song has a link to add it to the playlist and to stream it.
 
 ## Tools ##
