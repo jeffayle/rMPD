@@ -131,3 +131,26 @@ def dir_parent(directory)
         ''
     end
 end
+
+#Gets the name of the album art for a song by id
+def album_art(sid)
+    song = $mpd.song_with_id sid
+    directory = dir_parent song
+    
+    album_art_bydir directory
+end
+#Gets the album art for a directory
+def album_art_bydir(directory)
+    listing = Dir.glob($config[:mdir] + '/' + directory + '/*')
+    listing.map!{|f| [f, File.basename(f)]}
+    listing.each do |f|
+        return f[0] if $config[:albumArtFiles].include? f[1].downcase
+    end
+
+    #Recurse into parent directories
+    if directory == ''
+        nil
+    else
+        album_art_bydir(dir_parent(directory))
+    end
+end
