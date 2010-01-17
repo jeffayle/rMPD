@@ -37,3 +37,8 @@ and underscores are displayed as spaces.
 To write your own tool, simply create a new CGI script in one of those
 directories. Tools are given no extra information, but directory tools are
 given the directory to work on in the query string.
+
+## Dependencies ##
+You will need `rubygems` and the following gems installed to use rMPD:
+
+- mime-types
