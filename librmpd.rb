@@ -1063,6 +1063,7 @@ class MPD
     def time()
         t = self.status['time']
         if t
+            t = t.split ':'
             [t[0].to_i, t[1].to_i]
         else
             [0, 1] #When not playing anything.
