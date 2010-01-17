@@ -41,6 +41,12 @@ a img {
     height: 1em;
     overflow: hidden;
 }
+/* Cover */
+#coverArt {
+    position: absolute;
+    top: .25em;
+    right: .25em;
+}
 
 td {
     padding: 0 .25em;
