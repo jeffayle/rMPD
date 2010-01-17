@@ -1,6 +1,8 @@
 #!/usr/bin/ruby
 #Gives access to music library files over HTTP
+require 'rubygems'
 require 'common'
+require 'mime/types'
 
 ENV['REQUEST_URI'] =~ /\?(.*)$/
 f = $config[:mdir] + '/' + $1.url_decode
@@ -9,9 +11,10 @@ if f =~ /\/\.\.\//
     exit #If url contains /../, exit to not expose filesystem
 end
 
+mime = MIME::Types.type_for(f)[0].content_type
 f = File.open f, 'rb'
 
-print "Content-Type: audio/mpeg\r\n"#TODO: Make it guess mime type
+print "Content-Type: #{mime}\r\n"
 print "\r\n"
 
 #Outputs file
