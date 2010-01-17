@@ -65,11 +65,17 @@ class Integer
     end
 end
 
-#Case insensitive sorting
+#Case insensitive sorting, removes specified words from config to sort
 class Array
     def sort_nocase
         self.sort do |a, b|
-            a.upcase <=> b.upcase
+            aa = a.downcase #Make copies of them
+            bb = b.downcase
+            $config[:sortIgnore].each do |wrd|
+                aa.gsub! %r(#{wrd}), ''
+                bb.gsub! %r(#{wrd}), ''
+            end
+            aa <=> bb
         end
     end
 end

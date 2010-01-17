@@ -50,3 +50,6 @@ $config[:albumArtFiles] = ['folder.jpg', 'cover.jpg', 'front.jpg', 'cd.jpg']
 #Display width of album art
 #The whole image will always be sent, but will use HTML to scale the image
 $config[:albumArtWidth] = 300
+
+#Words to ignore from the beginning for sorting. Should be entered lowercase
+$config[:sortIgnore] = ['the ', 'a ']
