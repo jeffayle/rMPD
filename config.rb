@@ -39,3 +39,10 @@ $config[:fbContent] = ['title', 'artist', 'date', 'tools']
 #Volume control
 #How much each tick on volume control will increment the volume
 $config[:volumeInc] = 10
+
+#Album art display
+#Global album art on/off option
+$config[:albumArtOn] = true
+
+#Files to look for album art in, searched from first to last
+$config[:albumArtFiles] = ['folder.jpg', 'cover.jpg', 'front.jpg', 'cd.jpg']
