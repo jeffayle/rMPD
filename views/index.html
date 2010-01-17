@@ -9,6 +9,10 @@
 
     <body>
         <h1>MPD Web</h1>
+        <% if $hasAlbumArt %>
+            <img src="stream.rb?<%=$hasAlbumArt.url_encode%>"
+            width="<%=$config[:albumArtWidth]%>" />
+        <% end %>
         
         <!-- Control -->
         <div id="control">

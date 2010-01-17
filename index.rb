@@ -35,5 +35,12 @@ $pbSongWidth = 100.0 * $time[0] / $time[1]
 #Get tools
 $tools =  Dir.entries('Tools/').select{|d| d[0,1] != '.'}.sort_nocase
 
+#Album art
+$hasAlbumArt = if $stopped
+    nil
+else
+    album_art $playlist[$current]['file']
+end
+
 out = ERB.new(File.read('views/index.html'))
 print out.result
