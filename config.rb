@@ -46,3 +46,7 @@ $config[:albumArtOn] = true
 
 #Files to look for album art in, searched from first to last
 $config[:albumArtFiles] = ['folder.jpg', 'cover.jpg', 'front.jpg', 'cd.jpg']
+
+#Display width of album art
+#The whole image will always be sent, but will use HTML to scale the image
+$config[:albumArtWidth] = 300
