@@ -1,6 +1,6 @@
 # rMPD #
 rMPD is a webclient for the Music Player Daemon written entirely in Ruby.
-It is based on [http://github.com/jeffayle/librmpd2](librmpd2), and uses
+It is based on librmpd, and uses
 [Famfamfam's Silk Icon Set](http://www.famfamfam.com/lab/icons/silk/).
 
 ## License ##
