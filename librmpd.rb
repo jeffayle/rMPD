@@ -438,7 +438,7 @@ class MPD
     # Returns true if this was successful,
     # Raises a RuntimeError if the command failed
     def add( path )
-        send_command "add \"#{path}\""
+        send_command "add \"#{escape path}\""
     end
 
     #
@@ -513,7 +513,7 @@ class MPD
     # This returns an Array of MPD::Songs,
     # Raises a RuntimeError if the command failed
     def find( type, what )
-        response = send_command "find \"#{type}\" \"#{what}\""
+        response = send_command "find \"#{type}\" \"#{escape what}\""
         build_songs_list response
     end
 
@@ -555,7 +555,7 @@ class MPD
     # Raises a RuntimeError if the command failed
     def list( type, arg = nil )
         if not arg.nil?
-            response = send_command "list #{type} \"#{arg}\""
+            response = send_command "list #{type} \"#{escape arg}\""
         else
             response = send_command "list #{type}"
         end
@@ -585,12 +585,12 @@ class MPD
         response = ''
         if recursive
             if not path.nil?
-                response = send_command "listall \"#{path}\""
+                response = send_command "listall \"#{escape path}\""
             else
                 response = send_command 'listall'
             end
         else #Non recursive directory listing
-            response = send_command("lsinfo \"#{path || '/'}\"")
+            response = send_command("lsinfo \"#{escape(path) || '/'}\"")
         end
         filter_response response, /\Adirectory: /i
     end
@@ -608,12 +608,12 @@ class MPD
         response = '' 
         if recursive
             if not path.nil?
-                response = send_command "listall \"#{path}\""
+                response = send_command "listall \"#{escape path}\""
             else
                 response = send_command 'listall'
             end
         else
-            response = send_command("lsinfo \"#{path || '/'}\"")
+            response = send_command("lsinfo \"#{escape(path) || '/'}\"")
         end
         filter_response response, /\Afile: /i
     end
@@ -641,12 +641,12 @@ class MPD
         response = ''
         if recursive
             if not path.nil?
-                response = send_command "listallinfo \"#{path}\""
+                response = send_command "listallinfo \"#{escape path}\""
             else
                 response = send_command 'listallinfo'
             end
         else #Non recursive
-            response = send_command "lsinfo \"#{path || '/'}\""
+            response = send_command "lsinfo \"#{escape(path) || '/'}\""
         end
 
         build_songs_list response
@@ -867,7 +867,7 @@ class MPD
     # Returns true if successful,
     # Raises a RuntimeError if the command failed
     def rm( playlist )
-        send_command "rm \"#{playlist}\""
+        send_command "rm \"#{escape playlist}\""
     end
 
     #
@@ -883,7 +883,7 @@ class MPD
     # Returns true if successful,
     # Raises a RuntimeError if the command failed
     def save( playlist )
-        send_command "save \"#{playlist}\""
+        send_command "save \"#{escape playlist}\""
     end
 
     #
@@ -894,7 +894,7 @@ class MPD
     # Returns an Array of MPD::Songs,
     # Raises a RuntimeError if the command failed
     def search( type, what )
-        build_songs_list( send_command("search #{type} \"#{what}\"") )
+        build_songs_list( send_command("search #{type} \"#{escape what}\"") )
     end
 
     #
@@ -1002,7 +1002,7 @@ class MPD
     def update( path = nil )
         ret = ''
         if not path.nil?
-            ret = send_command("update \"#{path}\"")
+            ret = send_command("update \"#{escape path}\"")
         else
             ret = send_command('update')
         end
@@ -1231,6 +1231,14 @@ class MPD
 
         return list
     end
+    
+    #
+    # Private Method
+    #
+    # Escapes a string for MPD
+    def escape str
+        str.gsub /"/, '\"'
+    end
 
     private :send_command
     private :handle_server_response
@@ -1239,5 +1247,6 @@ class MPD
     private :build_songs_list
     private :build_outputs_list
     private :filter_response
+    private :escape
 
 end
